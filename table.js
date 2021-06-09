@@ -50,26 +50,6 @@ const users = [
         ],
         gender: 'Female'
     },
-    // {
-    //     name: 'Daniela',
-    //     age: 22,
-    //     email: 'andrea@academlo.com',
-    //     social: [
-    //         { name: 'facebook', url: 'facebook/andrea' },
-    //         { name: 'twitter', url: 'twitter/andrea' }
-    //     ],
-    //     gender: 'Female'
-    // },
-    // {
-    //     name: 'Andrea',
-    //     age: 42,
-    //     email: 'andrea@academlo.com',
-    //     social: [
-    //         { name: 'facebook', url: 'facebook/andrea' },
-    //         { name: 'twitter', url: 'twitter/andrea' }
-    //     ],
-    //     gender: 'Female'
-    // },
 ]
 
 function selectUsers(){
@@ -114,13 +94,13 @@ for (let i = 0; i < newUsersList.length; i++) {
     let ul = document.createElement('ul');
     tr.appendChild(ul)
 
-    let socialOne = document.createElement('li')
-    socialOne.innerHTML = newUsersList[0].social[0].name;
-    ul.appendChild(socialOne);
+    for (let j = 0; j < newUsersList[i].social.length; j++) {
+        let social = document.createElement('li')
+        social.innerHTML = newUsersList[i].social[j].url;
+        ul.appendChild(social);
+        
+    }
 
-    let socialTwo = document.createElement('li')
-    socialTwo.innerHTML = newUsersList[0].social[1].name;
-    ul.appendChild(socialTwo);
 
 }
 
